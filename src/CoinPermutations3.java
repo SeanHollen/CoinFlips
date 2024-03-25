@@ -1,7 +1,8 @@
 public class CoinPermutations3 {
     public static void printResults(int n) {
         long initial = System.currentTimeMillis();
-        for (long exp = 4; exp <= ((long)1 << n); exp <<= 1) {
+          for (int len = 2; len < n; len++) {
+            long exp = (long)1 << (long)len;
             long start = System.currentTimeMillis();
             long aliceWins = 0;
             long bobWins = 0;
@@ -18,11 +19,12 @@ public class CoinPermutations3 {
                 } else {
                     ties++;
                 }
-            }
+            };
             long end = System.currentTimeMillis();
             long elapsed = (end - start);
             long totalTime = (end - initial);
-            System.out.println("Alice Wins: " + aliceWins
+            System.out.println("# of flips: " + len
+                    + ", Alice Wins: " + aliceWins
                     + ", Bob Wins: " + bobWins
                     + ", Ties: " + ties
                     + ", In Time: " + elapsed
