@@ -27,8 +27,8 @@ public class CoinPermutations3 {
                     + ", Alice Wins: " + aliceWins
                     + ", Bob Wins: " + bobWins
                     + ", Ties: " + ties
-                    + ", In Time: " + elapsed
-                    + ", Current Time: " + totalTime
+                    + ", In Time: " + elapsed / 1000 + "," + elapsed % 1000
+                    + ", Current Time: " + totalTime / 1000 + "," + elapsed % 1000
             );
         }
     }
